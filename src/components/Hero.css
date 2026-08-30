@@ -1,0 +1,288 @@
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background-image: url("../assets/images/office3.png");
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.08) 35%,
+      rgba(0, 0, 0, 0.38) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-content {
+  position: absolute;
+
+  z-index: 2;
+
+  /*
+     Horizontal center
+  */
+  left: 50%;
+
+  /*
+     Position from top
+  */
+  top: 45%;
+
+  /*
+     Only horizontal translation
+  */
+  transform: translateX(-50%);
+
+  width: 90%;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 3px 20px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hero h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(
+    45px,
+    6vw,
+    100px
+  );
+
+  line-height: 0.9;
+
+  font-weight: 600;
+
+  letter-spacing: -5px;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   MAJDOOR
+========================================= */
+
+.hero h1 span {
+  display: inline;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.hero p {
+  margin-top: 28px;
+
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   KICKER
+========================================= */
+
+.hero-kicker {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 6px;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+
+.scroll-line {
+  width: 1px;
+
+  height: 45px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  animation:
+    scrollPulse 2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+
+    transform: scaleY(0.6);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scaleY(1);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-content {
+    top: 13%;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(
+        50px,
+        8vw,
+        90px
+      );
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero-content {
+    top: 14%;
+
+    width: 94%;
+  }
+
+  .hero h1 {
+
+    font-size:
+      clamp(
+        42px,
+        12vw,
+        70px
+      );
+
+    letter-spacing: -3px;
+
+    white-space: normal;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero p {
+    margin-top: 18px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+  }
+}

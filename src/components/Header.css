@@ -1,0 +1,296 @@
+.header {
+  position: absolute;
+
+  top: 20px;
+  left: 0;
+
+  width: 100%;
+
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+
+/* --------------------------------------------------
+   COMMON BUTTON STYLE
+-------------------------------------------------- */
+
+.working-status,
+.theme-button,
+.nav-button {
+  pointer-events: auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(15, 15, 18, 0.78);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* --------------------------------------------------
+   WORKING STATUS
+-------------------------------------------------- */
+
+.working-status {
+  height: 50px;
+
+  min-width: 150px;
+
+  padding: 0 18px;
+
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #55c7ff;
+
+  background: rgba(50, 170, 220, 0.12);
+
+  border-radius: 50%;
+}
+
+.status-dot svg {
+  animation: pulse 2s infinite;
+}
+
+.status-text {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 13px;
+}
+
+
+/* --------------------------------------------------
+   THEME BUTTON
+-------------------------------------------------- */
+
+.theme-button {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  height: 50px;
+
+  min-width: 230px;
+
+  padding: 0 25px;
+
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.theme-button:hover {
+  background: rgba(30, 30, 35, 0.9);
+
+  transform: translateX(-50%) translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.nav-button {
+  height: 50px;
+
+  padding: 0 21px;
+
+  border-radius: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-button:hover {
+  background: rgba(35, 35, 40, 0.9);
+
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* --------------------------------------------------
+   SUPPORT
+-------------------------------------------------- */
+
+.support-button {
+  padding-left: 19px;
+  padding-right: 19px;
+
+  color: #ffffff;
+}
+
+.support-button svg {
+  color: #ff4d7d;
+}
+
+
+/* --------------------------------------------------
+   ANIMATION
+-------------------------------------------------- */
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .theme-button {
+    min-width: 190px;
+  }
+
+  .nav-button {
+    padding: 0 15px;
+  }
+
+}
+
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .header {
+    top: 14px;
+
+    padding: 0 14px;
+  }
+
+  .working-status {
+    min-width: auto;
+
+    height: 44px;
+
+    padding: 0 13px;
+  }
+
+  .status-text {
+    display: none;
+  }
+
+  .theme-button {
+    position: static;
+
+    transform: none;
+
+    min-width: auto;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border-radius: 50%;
+  }
+
+  .theme-button span {
+    display: none;
+  }
+
+  .navigation {
+    gap: 6px;
+  }
+
+  .nav-button {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border-radius: 50%;
+  }
+
+  .nav-button span {
+    display: none;
+  }
+
+  .support-button {
+    width: 44px;
+  }
+
+}
+
