@@ -704,7 +704,6 @@ const MusicPlayer = () => {
 
       </div>
 
-
     </>
 
   );
